@@ -47,6 +47,8 @@ app.get('/logout', (req, res) => {
 app.get('/', (req, res) => {
   res.send('Bienvenido a Yacu Selva');
 });
+const adminRoutes = require('./routes/admin');
+app.use('/', adminRoutes);
 
 // Iniciar el servidor
 app.listen(3000, () => {

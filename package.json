@@ -1,0 +1,15 @@
+{
+  "name": "yacu-selva",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

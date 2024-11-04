@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const session = require('express-session');
 const passport = require('./auth/auth0');
@@ -44,15 +46,17 @@ app.get('/logout', (req, res) => {
 });
 
 // Ruta pública
+const adminRoutes = require('./routes/admin');
+app.use('/', adminRoutes);
 app.get('/', (req, res) => {
   res.send('Bienvenido a Yacu Selva');
 });
-const adminRoutes = require('./routes/admin');
-app.use('/', adminRoutes);
+
 
 // Iniciar el servidor
+const shopRoutes = require('./routes/shop');
+app.use('/', shopRoutes);
 app.listen(3000, () => {
   console.log('Servidor iniciado en http://localhost:3000');
 });
-const shopRoutes = require('./routes/shop');
-app.use('/', shopRoutes);
+
